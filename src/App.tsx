@@ -1,6 +1,5 @@
 import React from "react";
 import { StatusBar, Text, View } from "react-native";
-import TextPersonalizado from "@components/Text"
 import { ThemeProvider } from "styled-components/native"
 import COLORS from "@styles/theme"
 import { styled } from "styled-components";

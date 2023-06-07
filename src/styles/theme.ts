@@ -8,7 +8,7 @@ export default {
         WHITE: '#FFFFFF',
         TITLE: '#363F5F',
         SHAPE: '#f4ede8',
-        PRIMARY: '#1DC18B',
+        PRIMARY: '#9B51E0',
         GRAYHARD: '#666360',
         TEXTDARK: '#000000',
         WHITE_100: '#FFFFFF',
@@ -113,6 +113,6 @@ export default {
         POPPINSMEDIUM: 'Poppins-Medium',
         TITLE: 'DMSerifDisplay-Regular',
         POPPINSREGULAR: 'Poppins-Regular',
-        POPPINSEXTRABOLD: 'PPoppins-ExtraBold',
+        POPPINSEXTRABOLD: 'PPoppins-ExtraBold'
     },
 };
