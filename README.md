@@ -75,7 +75,7 @@ Algumas das tecnologias que foram utilizadas neste projeto.
 
 ---
 
-<a href="https://github.com/SilvaneiMartins">
+<a href="https://github.com/lineprado98">
     <img
         style="border-radius:50%"
         src="https://github.com/lineprado98.png"
