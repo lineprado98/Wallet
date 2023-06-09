@@ -13,7 +13,7 @@ interface IButtonProps {
     iconName?: keyof typeof Icon.getRawGlyphMap;
     isLoading?: boolean;
     disabled?: boolean;
-    variant?: 'primary' | 'outline' | "black";
+    variant?: 'primary' | 'outline' | "black"| "transparent";
     style?: ViewStyle;
 
 

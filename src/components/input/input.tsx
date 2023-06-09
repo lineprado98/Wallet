@@ -1,17 +1,20 @@
-import { View, Text, TextInputProps} from "react-native";
-import React from "react";
+import { View, Text, TextInputProps, TouchableOpacity} from "react-native";
+import React, { useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 import { Container, InputContainer } from "./styles";
+
 import theme from "@styles/theme";
 interface InputProps {
     rightIcon?: boolean;
     leftIcon?: boolean;
     iconName:string;
     iconSize?:number;
-    iconColor?:string
+    iconColor?:string;
+    secureTextEntry?:boolean
 }
-const Input: React.FC<InputProps & TextInputProps> = ({ rightIcon, leftIcon,iconName,iconColor,iconSize, ...rest }) => {
+const Input: React.FC<InputProps & TextInputProps> = ({ rightIcon, leftIcon,iconName,iconColor,iconSize,  secureTextEntry, ...rest }) => {
 
+    const [security, setSecurity] = useState(!secureTextEntry);
     return (
 
         <Container>
@@ -19,19 +22,26 @@ const Input: React.FC<InputProps & TextInputProps> = ({ rightIcon, leftIcon,icon
             {leftIcon && (
                 <Icon 
                 name={iconName} 
-                size={iconSize} color={iconColor ||  theme.COLORS.BLACK} 
+                size={iconSize} color={iconColor ||  theme.COLORS.GRAY2} 
                 style={{padding:5 }}/>
             )}
 
             <InputContainer {...rest}
+            underlineColorAndroid={'transparent'}
+            secureTextEntry={security}
             placeholderTextColor={theme.COLORS.GRAY3}/>
 
             {rightIcon && (
+                <TouchableOpacity 
+                onPress={()=>{
+                    setSecurity(!security)
+                }}>
                 <Icon
-                name={iconName} 
-                size={iconSize} color={iconColor ||  theme.COLORS.BLACK} 
+                name={security?'eye':'eyeo'} 
+                size={iconSize} color={iconColor ||  theme.COLORS.GRAY2} 
                 style={{padding:5}}
                 ></Icon>
+                </TouchableOpacity>
             )}
         </Container>
     )

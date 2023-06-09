@@ -18,7 +18,6 @@ background-color: ${({theme})=>theme.COLORS.PURPLE1};
 export const Title = styled.Text`
 font-size: ${RFValue(18)}px;
 font-family:${({theme})=>theme.FONTS.POPPINSMEDIUM};
-color: ${({theme})=>theme.COLORS.WHITE_100 };
 
 `;
 
