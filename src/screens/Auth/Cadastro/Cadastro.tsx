@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import {
     Container,
     ContentHeader,
@@ -16,27 +16,30 @@ import {
     ContentTtileForgotPassword
 
 } from "./styles";
-import { KeyboardAvoidingView } from "react-native";
+import { KeyboardAvoidingView,ScrollView } from "react-native";
 import { ButtonSocialGoogle } from "@components/Buttons/ButtonSocial/Google/ButtonSocialGoogle";
 import { ButtonSocialFacebook } from "@components/Buttons/ButtonSocial/Facebook/ButtonSocialFacebook";
 import Input from "@components/input";
 import theme from "@styles/theme";
 import Button from "@components/Buttons/Button";
-const Login: React.FC = () => {
+import { useNavigation } from "@react-navigation/native";
+import { Login } from '../Login';
+export const Cadastro = () => {
+
+    const navigation = useNavigation();
 
     return (
-        <KeyboardAvoidingView
-            behavior="position"
-            enabled>
 
-            <Container>
+
+        <Container>
+            <ScrollView
+                showsVerticalScrollIndicator={false}>
                 <ContentHeader>
                     <Title>
-                        Seja bem vindo(a) {"\n"}a Wallet App
+                        Seja bem vindo(a) {"\n"}a Wallet App Cadastro
                     </Title>
                     <Description>
-                        Entrar com redes sociais
-
+                Cadastre-se com
                     </Description>
 
                 </ContentHeader>
@@ -54,15 +57,22 @@ const Login: React.FC = () => {
                 <ContentBody>
                     <Input
                         autoCapitalize="none"
+                        placeholder="Digite seu nome"
+                        leftIcon
+                        keyboardType="default"
+                        autoCorrect={false}
+                        iconSize={20}
+                        iconName="user" />
+
+                    <Input
+                        autoCapitalize="none"
                         placeholder="Digite seu E-mail"
                         leftIcon
                         autoCorrect={false}
                         keyboardType="email-address"
                         iconSize={20}
-                        iconName="mail"
+                        iconName="mail" />
 
-
-                    ></Input>
                     <Input
                         autoCapitalize="none"
                         placeholder="Digite sua senha"
@@ -72,14 +82,11 @@ const Login: React.FC = () => {
                         keyboardType="default"
                         iconName="lock1"
                         iconSize={20}
-                    ></Input>
+                    />
 
                 </ContentBody>
                 <ContentButtonForgotPassword onPress={() => { }}>
 
-                    <ContentForgotPassword>
-                        <ContentTtileForgotPassword>Recuperar Senha</ContentTtileForgotPassword>
-                    </ContentForgotPassword>
                 </ContentButtonForgotPassword>
                 {/* <Button
                         variant="transparent"
@@ -90,13 +97,13 @@ const Login: React.FC = () => {
 
                 <Button
                     variant="primary"
-                    title="Entrar"
+                    title="Registre-se"
                     onPress={() => { }}
 
                 ></Button>
-                <ButtonSignUp onPress={() => { }}>
-                    <TitleButtonSignUp>Não tem cadastro ainda?</TitleButtonSignUp>
-                    <TitleButtonSignUp1>Cadastre-se</TitleButtonSignUp1>
+                <ButtonSignUp onPress={() => { navigation.navigate('Login') }}>
+                    <TitleButtonSignUp>Ja tem cadastro?</TitleButtonSignUp>
+                    <TitleButtonSignUp1>Logar-se</TitleButtonSignUp1>
 
                 </ButtonSignUp>
 
@@ -104,11 +111,7 @@ const Login: React.FC = () => {
 
 
                 </ContentFooter>
-
-            </Container>
-
-        </KeyboardAvoidingView>
-
+            </ScrollView>
+        </Container>
     )
 }
-export { Login }

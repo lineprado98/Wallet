@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 
 import { variants } from "./Variante";
 import { ViewStyle } from "react-native";
-import { Content } from "@screens/Login/styles";
+import { Content } from "@screens/Auth/Login/styles";
 import theme from "@styles/theme";
 interface IButtonProps {
     title: string;
